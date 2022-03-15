@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/21276093/AndroidStudioProjects/JogoDaVelha/app/src/main/res/drawable/button_modo_jogo.xml" value="0.5" />
+        <entry key="..\:/Users/21276093/AndroidStudioProjects/JogoDaVelha/app/src/main/res/font/ruda_font.xml" value="0.34629629629629627" />
+        <entry key="..\:/Users/21276093/AndroidStudioProjects/JogoDaVelha/app/src/main/res/layout/activity_inicial.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/21276093/AndroidStudioProjects/JogoDaVelha/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/21276093/AndroidStudioProjects/JogoDaVelha/app/src/main/res/layout/activity_splash.xml" value="0.33" />
       </map>
     </option>
