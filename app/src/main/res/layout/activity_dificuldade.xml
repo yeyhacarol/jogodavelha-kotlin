@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DificuldadeActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogo da Velha"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:fontFamily="@font/ruda_variablefont_wght"
+        android:layout_marginBottom="125dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:text="Escolha a dificuldade"
+        android:fontFamily="@font/ruda_variablefont_wght"
+        android:textColor="@color/black"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/facil"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:text="Fácil"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="@font/ruda_variablefont_wght"
+        android:textSize="24sp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_dificuldade_token"
+        android:backgroundTint="#D4F1F4"/>
+
+    <Button
+        android:id="@+id/intermediario"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:text="Intermediário"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="@font/ruda_variablefont_wght"
+        android:textSize="24sp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_dificuldade_token"
+        android:backgroundTint="#87E3DA"/>
+
+    <Button
+        android:id="@+id/dificil"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
+        android:text="Difícil"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:fontFamily="@font/ruda_variablefont_wght"
+        android:textSize="24sp"
+        android:background="@drawable/button_dificuldade_token"
+        android:backgroundTint="#27C7E8">
+    </Button>
+
+</LinearLayout>

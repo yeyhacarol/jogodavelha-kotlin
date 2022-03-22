@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JogoDaVelha">
         <activity
+            android:name=".PlayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TokenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DificuldadeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

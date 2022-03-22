@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".TokenActivity"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -22,31 +22,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="37dp"
+        android:text="Escolha o token"
         android:fontFamily="@font/ruda_variablefont_wght"
-        android:text="Escolha o modo de jogo"
         android:textColor="@color/black"
         android:textSize="24sp"/>
 
     <Button
-        android:id="@+id/player_vs_player"
-        android:layout_width="330dp"
-        android:layout_height="105dp"
-        android:layout_marginBottom="37dp"
-        android:padding="15dp"
-        android:background="@drawable/button_modo_jogador_vs_jogador"
-        android:drawableLeft="@drawable/jogador"
-        android:text="VS"
-        android:textSize="37sp"
-        android:drawableRight="@drawable/jogador"/>
+        android:id="@+id/tokenX"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="X"
+        android:textSize="40sp"
+        android:background="@drawable/button_dificuldade_token"
+        android:backgroundTint="#84BEF3"
+        android:layout_marginBottom="15dp"/>
     <Button
-        android:id="@+id/player_vs_computador"
-        android:layout_width="330dp"
-        android:layout_height="105dp"
-        android:padding="15dp"
-        android:background="@drawable/button_modo_jogador_vs_computador"
-        android:drawableLeft="@drawable/jogador"
-        android:text="VS"
-        android:textSize="37sp"
-        android:drawableRight="@drawable/computador"/>
+        android:id="@+id/tokenO"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="O"
+        android:textSize="40sp"
+        android:background="@drawable/button_dificuldade_token"
+        android:backgroundTint="#CAB1FF"/>
 
 </LinearLayout>
