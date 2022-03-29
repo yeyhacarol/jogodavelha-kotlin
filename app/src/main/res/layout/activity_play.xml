@@ -76,7 +76,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"/>
                 <Button
-                    android:id="@+id/btn4"
+                    android:id="@+id/btn2"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_dificuldade_token"
@@ -84,7 +84,7 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="5dp"/>
                 <Button
-                    android:id="@+id/btn7"
+                    android:id="@+id/btn3"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_dificuldade_token"
@@ -98,7 +98,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btn2"
+                    android:id="@+id/btn4"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_dificuldade_token"
@@ -113,7 +113,7 @@
                     android:backgroundTint="#D4F1F4"
                     android:layout_marginBottom="5dp"/>
                 <Button
-                    android:id="@+id/btn8"
+                    android:id="@+id/btn6"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_dificuldade_token"
@@ -126,14 +126,14 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btn3"
+                    android:id="@+id/btn7"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_dificuldade_token"
                     android:backgroundTint="#D4F1F4"
                     android:layout_marginBottom="5dp"/>
                 <Button
-                    android:id="@+id/btn6"
+                    android:id="@+id/btn8"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/button_dificuldade_token"

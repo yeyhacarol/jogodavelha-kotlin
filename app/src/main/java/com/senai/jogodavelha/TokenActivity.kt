@@ -7,26 +7,38 @@ import android.widget.Button
 import java.util.*
 import kotlin.concurrent.schedule
 
+private lateinit var tokenXButton: Button
+private lateinit var tokenOButton: Button
+
 class TokenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_token)
 
-        val tokenX = findViewById<Button>(R.id.tokenX)
-        val tokenO = findViewById<Button>(R.id.tokenO)
-
-        tokenX.setOnClickListener() {
-            Timer().schedule(1000){iniciarJogo()}
-        }
-        tokenO.setOnClickListener(){
-            Timer().schedule(1000){iniciarJogo()}
-        }
+        tokenXButton = findViewById<Button>(R.id.tokenX)
+        tokenOButton = findViewById<Button>(R.id.tokenO)
+//        var jogadorUm: Int = 1
+//
+//        if (jogadorUm == 1) {
+//            tokenXButton.setOnClickListener() {
+//                Timer().schedule(1000){iniciarJogo()}
+//            }
+//        } else if (jogadorUm != 1){
+//            tokenOButton.setOnClickListener(){
+//                Timer().schedule(1000){iniciarJogo()}
+//            }
+//        }
+        tokenXButton.setOnClickListener { iniciarJogo("x") }
+        tokenOButton.setOnClickListener { iniciarJogo("o") }
 
     }
 
-    private fun iniciarJogo() {
+    fun iniciarJogo( jogador: String) {
         val intent = Intent(this, PlayActivity::class.java)
+        intent.putExtra("jogador",jogador)
         startActivity(intent)
     }
+
+
 
 }
