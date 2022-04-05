@@ -1,147 +1,132 @@
 package com.senai.jogodavelha
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import kotlinx.android.synthetic.main.activity_play.*
 
 class PlayActivity : AppCompatActivity() {
+    var jogador: Int = 1
+    var buttons = ArrayList<Button>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
 
+//      resgatando button para reiniciar, colocando evento de click e chamando a função que faz isso
         val reiniciar = findViewById<Button>(R.id.reiniciar)
 
         reiniciar.setOnClickListener() {
             voltarMain()
         }
 
-        val btnUm = findViewById<Button>(R.id.btn1)
-        val btnDois = findViewById<Button>(R.id.btn2)
-        val btnTres = findViewById<Button>(R.id.btn3)
-        val btnQuatro = findViewById<Button>(R.id.btn4)
-        val btnCinco = findViewById<Button>(R.id.btn5)
-        val btnSeis = findViewById<Button>(R.id.btn6)
-        val btnSete = findViewById<Button>(R.id.btn7)
-        val btnOito = findViewById<Button>(R.id.btn8)
-        val btnNove = findViewById<Button>(R.id.btn9)
+//      array com todos os buttons, utilizando extensão kotlin
+        buttons = arrayListOf<Button>(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9)
 
+//      colocando um evento de click em cada um dos buttons entre zero e oito e chamando a função de jogar para cada um dos buttons
+        for(button in 0..buttons.size-1) {
+            buttons[button].setOnClickListener {
+                jogar(it as Button)
+            }
+        }
+
+//        val intent: Intent = getIntent()
+//
+//        val jogador1 = intent.getStringExtra("jogador")
+//        val jogador2 = ""
+//
+////      condição para definir o primeiro token clicado
+//        if (jogador1 == "X") {
+//            jogador2 == "O"
+//        } else{
+//            jogador2 == "X"
+//        }
+//
+//        btnUm.setOnClickListener {
+//            if (jogador1 == "X") {
+//                btnUm.text = jogador1
+//            }
+//        }
+    }
+
+    private fun jogar(btn: Button) {
         val intent: Intent = getIntent()
-        val tokenX = true
-        val tokenO = true
 
         val jogador1 = intent.getStringExtra("jogador")
-        val jogador2 = ""
-        if (jogador1 == "x") {
-            jogador2 == "o"
-        }else{
-            jogador2 == "x"
+//        val jogador2 = ""
+
+//      condição para definir o primeiro token clicado
+        if (jogador1 == "X") {
+            jogador2 == "O"
+        } else{
+            jogador2 == "X"
         }
 
-        btnUm.setOnClickListener {
-            btnUm.text = jogador1
+        if (jogador % 2 != 0) {
+            btn.text = "X"
+        } else {
+            btn.text = "O"
         }
-//
-//
-//        btnUm.setOnClickListener() {
-//            if (tokenX) {
-//                btnUm.text = intent.getStringExtra("xzin")
-//                btnUm.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnUm.text = intent.getStringExtra("ozin")
-//                btnUm.setBackgroundColor(0xD3C1F9)
-//            }
-//
-//            btnUm.text = intent.getStringExtra("xzin")
-//        }
-//
-//        btnDois.setOnClickListener() {
-//            if (tokenX) {
-//                btnDois.text = intent.getStringExtra("xzin")
-//                btnDois.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnDois.text = intent.getStringExtra("ozin")
-//                btnDois.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnTres.setOnClickListener() {
-//            if (tokenX) {
-//                btnTres.text = intent.getStringExtra("xzin")
-//                btnTres.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnTres.text = intent.getStringExtra("ozin")
-//                btnTres.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnQuatro.setOnClickListener() {
-//            if (tokenX) {
-//                btnQuatro.text = intent.getStringExtra("xzin")
-//                btnQuatro.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnQuatro.text = intent.getStringExtra("ozin")
-//                btnQuatro.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnCinco.setOnClickListener() {
-//            if (tokenX) {
-//                btnCinco.text = intent.getStringExtra("xzin")
-//                btnCinco.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnCinco.text = intent.getStringExtra("ozin")
-//                btnCinco.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnSeis.setOnClickListener() {
-//            if (tokenX) {
-//                btnSeis.text = intent.getStringExtra("xzin")
-//                btnSeis.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnSeis.text = intent.getStringExtra("ozin")
-//                btnSeis.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnSete.setOnClickListener() {
-//            if (tokenX) {
-//                btnSete.text = intent.getStringExtra("xzin")
-//                btnSete.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnSete.text = intent.getStringExtra("ozin")
-//                btnSete.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnOito.setOnClickListener() {
-//            if (tokenX) {
-//                btnOito.text = intent.getStringExtra("xzin")
-//                btnOito.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnOito.text = intent.getStringExtra("ozin")
-//                btnOito.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
-//
-//        btnNove.setOnClickListener() {
-//            if (tokenX) {
-//                btnNove.text = intent.getStringExtra("xzin")
-//                btnNove.setBackgroundColor(0x84BEF3)
-//            } else if (tokenO) {
-//                btnNove.text = intent.getStringExtra("ozin")
-//                btnNove.setBackgroundColor(0xD3C1F9)
-//            }
-//        }
 
+        btn.isClickable = false
+        vitorias()
+        jogador++
+    }
+
+    private fun vitorias() {
+//      verificando se foi velha
+        if(jogador == 9) {
+            resultado.text = "DEU VELHA!"
+        }
+
+//      verificando as verticais
+        val posicoes = listOf<Int>(0, 3, 6)
+
+        for(x in posicoes) {
+            if (buttons[x].text != "" && buttons[x].text == buttons[x + 1].text && buttons[x + 1].text == buttons[x + 2].text) {
+                ganhador()
+            }
+        }
+
+//      verificando as horizontais
+        for(x in 0..2) {
+            if(buttons[x].text != "" && buttons[x].text == buttons[x + 3].text && buttons[x + 3].text == buttons[x + 6].text){
+                ganhador()
+            }
+        }
+
+//      verificando as diagonais
+        if ((buttons[0].text != "" && buttons[0].text == buttons[4].text && buttons[4].text == buttons[8].text)
+            || (buttons[2].text != "" && buttons[2].text == buttons[4].text && buttons[4].text == buttons[6].text)) {
+            ganhador()
+        }
 
     }
+
+//  função para determinar quem ganhou e mostrar na tela
+    private fun ganhador() {
+        if (jogador % 2 != 0) {
+            resultado.text = "Ganhador X"
+        } else {
+            resultado.text = "Ganhador O"
+        }
+
+        jogoAcabado()
+    }
+
+    private fun jogoAcabado() {
+        for(x in 0..buttons.size-1) {
+            buttons[x].isClickable = false
+        }
+    }
+
 
     private fun voltarMain() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
+
+
 
 }

@@ -148,4 +148,15 @@
             </LinearLayout>
 
         </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/ruda_variablefont_wght"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="24sp"/>
 </LinearLayout>

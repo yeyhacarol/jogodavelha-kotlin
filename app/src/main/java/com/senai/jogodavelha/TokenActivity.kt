@@ -17,25 +17,14 @@ class TokenActivity : AppCompatActivity() {
 
         tokenXButton = findViewById<Button>(R.id.tokenX)
         tokenOButton = findViewById<Button>(R.id.tokenO)
-//        var jogadorUm: Int = 1
-//
-//        if (jogadorUm == 1) {
-//            tokenXButton.setOnClickListener() {
-//                Timer().schedule(1000){iniciarJogo()}
-//            }
-//        } else if (jogadorUm != 1){
-//            tokenOButton.setOnClickListener(){
-//                Timer().schedule(1000){iniciarJogo()}
-//            }
-//        }
-        tokenXButton.setOnClickListener { iniciarJogo("x") }
-        tokenOButton.setOnClickListener { iniciarJogo("o") }
 
+        tokenXButton.setOnClickListener { iniciarJogo("X") }
+        tokenOButton.setOnClickListener { iniciarJogo("O") }
     }
 
-    fun iniciarJogo( jogador: String) {
+    fun iniciarJogo(jogador: String) {
         val intent = Intent(this, PlayActivity::class.java)
-        intent.putExtra("jogador",jogador)
+        intent.putExtra("jogador", jogador)
         startActivity(intent)
     }
 
