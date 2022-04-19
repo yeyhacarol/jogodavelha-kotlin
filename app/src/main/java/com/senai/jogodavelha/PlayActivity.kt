@@ -9,10 +9,14 @@ import kotlinx.android.synthetic.main.activity_play.*
 class PlayActivity : AppCompatActivity() {
     var jogador: Int = 1
     var buttons = ArrayList<Button>()
+    var tokenAtual = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_play)
+
+        val intent: Intent = getIntent()
+        tokenAtual = intent.getStringExtra("jogador").toString()
 
 //      resgatando button para reiniciar, colocando evento de click e chamando a função que faz isso
         val reiniciar = findViewById<Button>(R.id.reiniciar)
@@ -30,48 +34,22 @@ class PlayActivity : AppCompatActivity() {
                 jogar(it as Button)
             }
         }
-
-//        val intent: Intent = getIntent()
-//
-//        val jogador1 = intent.getStringExtra("jogador")
-//        val jogador2 = ""
-//
-////      condição para definir o primeiro token clicado
-//        if (jogador1 == "X") {
-//            jogador2 == "O"
-//        } else{
-//            jogador2 == "X"
-//        }
-//
-//        btnUm.setOnClickListener {
-//            if (jogador1 == "X") {
-//                btnUm.text = jogador1
-//            }
-//        }
     }
 
     private fun jogar(btn: Button) {
-        val intent: Intent = getIntent()
-
-        val jogador1 = intent.getStringExtra("jogador")
-//        val jogador2 = ""
-
-//      condição para definir o primeiro token clicado
-        if (jogador1 == "X") {
-            jogador2 == "O"
-        } else{
-            jogador2 == "X"
-        }
-
-        if (jogador % 2 != 0) {
-            btn.text = "X"
-        } else {
-            btn.text = "O"
-        }
+        btn.text = tokenAtual
+        proximoJogador()
 
         btn.isClickable = false
         vitorias()
-        jogador++
+    }
+
+    private fun proximoJogador() {
+        if (tokenAtual == "X"){
+            tokenAtual = "O"
+        }else{
+            tokenAtual = "X"
+        }
     }
 
     private fun vitorias() {
@@ -106,9 +84,9 @@ class PlayActivity : AppCompatActivity() {
 
 //  função para determinar quem ganhou e mostrar na tela
     private fun ganhador() {
-        if (jogador % 2 != 0) {
+        if (jogador == 0) {
             resultado.text = "Ganhador X"
-        } else {
+        } else if (jogador == 1) {
             resultado.text = "Ganhador O"
         }
 
